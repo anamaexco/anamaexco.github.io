@@ -281,9 +281,29 @@ section.fading,
     .hero-header .hero-image {
         width: 200px !important;
         height: 200px !important;
-        max-width: 80vw !important;
-        max-height: 40vw !important;
+        max-width: 60vw !important;
+        max-height: 60vw !important;
         border-width: 2px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-header .hero-image {
+        margin-top: 50px !important;
+        width: 500px !important;
+        height: 500px !important;
+        max-width: 70vw !important;
+        max-height: 70vw !important;
+        border-width: 2px !important;
+    }
+
+    .hero-header .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+
+    .hero-header .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
     }
 }
 
@@ -375,6 +395,11 @@ section.fading,
         max-height: 36px;
         font-size: 1.1rem;
         padding: 0.3em 0.6em;
+    }
+
+    .perfil p {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
     }
 }
 
