@@ -107,9 +107,8 @@ section {
     margin-bottom: 2rem;
     opacity: 1;
     transform: none;
-    transition: opacity 0.7s, transform 0.7s;
+    transition: opacity 0.5s cubic-bezier(.4, 0, .2, 1), transform 0.5s cubic-bezier(.4, 0, .2, 1), filter 0.5s cubic-bezier(.4, 0, .2, 1);
     will-change: opacity, transform;
-    transition: opacity 0.7s, transform 0.7s, filter 0.7s;
 }
 
 section.visible {
@@ -147,7 +146,7 @@ section h2 {
     transition: box-shadow 0.3s;
     opacity: 1;
     transform: none;
-    transition: opacity 0.7s, transform 0.7s, filter 0.7s;
+    transition: opacity 0.5s cubic-bezier(.4, 0, .2, 1), transform 0.5s cubic-bezier(.4, 0, .2, 1), filter 0.5s cubic-bezier(.4, 0, .2, 1);
     will-change: opacity, transform;
 }
 
@@ -211,6 +210,80 @@ section.fading,
 
     section h2 {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-header {
+        height: auto;
+        min-height: 0;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        justify-content: flex-start;
+        background: linear-gradient(135deg, #232946 0%, #3a3a5d 100%);
+        position: static;
+        box-sizing: border-box;
+    }
+
+    .hero-header .hero-title {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        margin-bottom: 0.3em;
+        word-break: break-word;
+        padding: 0 0.3em;
+    }
+
+    .hero-header .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.5em;
+        padding: 0 0.3em;
+        word-break: break-word;
+    }
+
+    .hero-header .hero-image-bg {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        margin-bottom: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+    }
+
+    .hero-header .hero-image {
+        width: 90px;
+        height: 90px;
+        max-width: 60vw;
+        max-height: 60vw;
+        border-width: 2px;
+        margin-top: 50px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .cv-container {
+        margin: 0.5rem 0 0 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0.5rem 0.2rem 1.2rem 0.2rem;
+        max-width: 100vw;
+    }
+
+    body {
+        background: linear-gradient(135deg, #232946 0%, #3a3a5d 100%);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-header .hero-image {
+        width: 200px !important;
+        height: 200px !important;
+        max-width: 80vw !important;
+        max-height: 40vw !important;
+        border-width: 2px !important;
     }
 }
 
@@ -383,14 +456,15 @@ section,
 .formacion ul {
     opacity: 1;
     transform: translateY(0) scale(1);
-    transition: opacity 0.7s, transform 0.7s, filter 0.7s;
+    transition: opacity 0.5s cubic-bezier(.4, 0, .2, 1), transform 0.5s cubic-bezier(.4, 0, .2, 1), filter 0.5s cubic-bezier(.4, 0, .2, 1);
     will-change: opacity, transform;
 }
 
 .fading {
-    opacity: 0.7;
-    transform: translateY(40px) scale(0.98);
-    filter: blur(1px);
+    opacity: 0.85;
+    transform: translateY(16px) scale(0.995);
+    filter: blur(0.5px);
+    transition: opacity 0.5s cubic-bezier(.4, 0, .2, 1), transform 0.5s cubic-bezier(.4, 0, .2, 1), filter 0.5s cubic-bezier(.4, 0, .2, 1);
 }
 
 /* Parallax effect for app bar */
@@ -488,7 +562,7 @@ body.dark-mode .formacion-detalle {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: height 0.7s cubic-bezier(.4, 0, .2, 1), opacity 0.7s;
+    transition: height 1.1s cubic-bezier(.4, 0, .2, 1), opacity 0.9s cubic-bezier(.4, 0, .2, 1);
     z-index: 2;
     background: linear-gradient(135deg, #232946 0%, #3a3a5d 100%);
     /* Added background similar to text color */
@@ -497,6 +571,15 @@ body.dark-mode .formacion-detalle {
     justify-content: flex-start;
     text-align: center;
     padding-top: 2.5rem;
+    transition: opacity 0.6s cubic-bezier(.4, 0, .2, 1), transform 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Remove unwanted scroll by NOT setting height: 0 or min-height: 0 on minimized */
+.hero-header.minimized {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-32px) scale(0.98);
+    transition: opacity 0.6s cubic-bezier(.4, 0, .2, 1), transform 0.6s cubic-bezier(.4, 0, .2, 1);
 }
 
 .hero-header .hero-image-bg {
@@ -577,11 +660,17 @@ body.dark-mode .formacion-detalle {
 }
 
 .hero-header.minimized {
-    height: 0;
-    min-height: 0;
     opacity: 0;
     pointer-events: none;
-    transition: height 0.7s cubic-bezier(.4, 0, .2, 1), opacity 0.7s;
+    transform: translateY(-32px) scale(0.98);
+    transition: opacity 0.6s cubic-bezier(.4, 0, .2, 1), transform 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+.hero-header.morph-out {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-32px) scale(0.98);
+    transition: opacity 0.6s cubic-bezier(.4, 0, .2, 1), transform 0.6s cubic-bezier(.4, 0, .2, 1);
 }
 
 body.dark-mode .hero-header .hero-title {
@@ -608,15 +697,23 @@ body.dark-mode .hero-header .hero-title {
     min-height: 56px;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-40px);
-    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(-24px) scale(0.98);
+    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
     gap: 1.5rem;
 }
 
 .app-bar.compact.show {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+}
+
+.app-bar.compact.morph-in {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s cubic-bezier(.4, 0, .2, 1), transform 0.6s cubic-bezier(.4, 0, .2, 1);
 }
 
 body.dark-mode .app-bar.compact {

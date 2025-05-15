@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Ana Expósito Cortés</title>
+    <title>Ana María Expósito Cortés</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,7 +15,7 @@
         </div>
         <div class="hero-overlay">
             <h1 class="hero-title">Ana Mª Expósito Cortés</h1>
-            <p class="hero-subtitle">Relaciones Laborales</p>
+            <p class="hero-subtitle">Relaciones Laborales y docente para la formación profesional de empleo</p>
         </div>
     </header>
     <div class="app-bar compact" id="compactHeader">
@@ -31,19 +31,24 @@
     <div class="cv-container">
         <section class="perfil">
             <h2>Perfil</h2>
-            <p>Jefa del departamento de prestación de servicios con más de 11 años de experiencia en la coordinación de
-                grupos de trabajo, resolución de problemas, planificación, profesionalidad en el manejo de la
+            <p>Responsable del departamento de tratamiento de datos y prestación de servicios a entidades bancarias y
+                organismos públicos.
+                Más de 11 años de experiencia en la coordinación de grupos de trabajo, resolución de problemas,
+                planificación, profesionalidad en el manejo de la
                 información y asistencia de calidad.</p>
         </section>
         <section class="experiencia">
             <h2>Experiencia</h2>
             <div class="job">
-                <h3>Auxiliar Administrativo</h3>
-                <p><strong>SCA Cordobesa de Informática</strong> | Enero 1992 - Julio 1992</p>
+                <h3>Jefa del Departamento de Grabación de Datos</h3>
+                <p><strong>Cibernos Sur (Grupo Cajasur)</strong> | Julio 1998 - Marzo 2004</p>
                 <ul>
-                    <li>Atención de llamadas telefónicas</li>
-                    <li>Recepción y envío de documentos</li>
-                    <li>Archivo</li>
+                    <li>Coordinación de grupos de trabajo</li>
+                    <li>Selección de personal</li>
+                    <li>Seguimiento de proyectos</li>
+                    <li>Atención al cliente</li>
+                    <li>Colaboración en el desarrollo de programas y pruebas de software</li>
+                    <li>Control de calidad</li>
                 </ul>
             </div>
             <div class="job">
@@ -58,16 +63,14 @@
                     <li>Atención al cliente</li>
                 </ul>
             </div>
+
             <div class="job">
-                <h3>Jefa del Departamento de Grabación de Datos</h3>
-                <p><strong>Cibernos Sur (Grupo Cajasur)</strong> | Julio 1998 - Marzo 2004</p>
+                <h3>Auxiliar Administrativo</h3>
+                <p><strong>SCA Cordobesa de Informática</strong> | Enero 1992 - Julio 1992</p>
                 <ul>
-                    <li>Coordinación de grupos de trabajo</li>
-                    <li>Selección de personal</li>
-                    <li>Seguimiento de proyectos</li>
-                    <li>Atención al cliente</li>
-                    <li>Colaboración en el desarrollo de programas y pruebas de software</li>
-                    <li>Control de calidad</li>
+                    <li>Atención de llamadas telefónicas</li>
+                    <li>Recepción y envío de documentos</li>
+                    <li>Archivo</li>
                 </ul>
             </div>
         </section>
@@ -82,7 +85,37 @@
             </ul>
         </section>
         <section class="formacion">
-            <h2>Formación</h2>
+            <h2>Formación reglada</h2>
+
+            <div class="formacion-item">
+                <div class="formacion-header">
+                    <span class="formacion-institucion">Consejería de Empleo, Empresa y Trabajo Autónomo de la Junta de
+                        Andalucía</span>
+                    <span class="formacion-fecha">Febrero 2023</span>
+                </div>
+                <div class="formacion-titulo">Certificado de profesionalidad para la Docencia para la formación
+                    profesional para el empleo</div>
+            </div>
+
+            <div class="formacion-item">
+                <div class="formacion-header">
+                    <span class="formacion-institucion">Universidad de Granada</span>
+                    <span class="formacion-fecha">Septiembre 1991</span>
+                </div>
+                <div class="formacion-titulo">Diplomada en Relaciones Laborales</div>
+            </div>
+
+        </section>
+        <section class="formacion">
+            <h2>Formación complementaria</h2>
+            <div class="formacion-item">
+                <div class="formacion-header">
+                    <span class="formacion-institucion">Cámara de Comercio</span>
+                    <span class="formacion-fecha">Agosto 2023</span>
+                </div>
+                <div class="formacion-titulo">Gestión laboral</div>
+                <div class="formacion-detalle">150h</div>
+            </div>
             <div class="formacion-item">
                 <div class="formacion-header">
                     <span class="formacion-institucion">Delegación de Igualdad Ayuntamiento de Dos Hermanas</span>
@@ -91,6 +124,7 @@
                 <div class="formacion-titulo">Curso de Ofimática</div>
                 <div class="formacion-detalle">75h</div>
             </div>
+
             <div class="formacion-item">
                 <div class="formacion-header">
                     <span class="formacion-institucion">Andalucía Compromiso Digital, Junta de Andalucía</span>
@@ -150,13 +184,6 @@
             </div>
             <div class="formacion-item">
                 <div class="formacion-header">
-                    <span class="formacion-institucion">Universidad de Granada</span>
-                    <span class="formacion-fecha">Septiembre 1991</span>
-                </div>
-                <div class="formacion-titulo">Diplomada en Relaciones Laborales</div>
-            </div>
-            <div class="formacion-item">
-                <div class="formacion-header">
                     <span class="formacion-institucion">Colegio Oficial de Graduados Sociales de Córdoba</span>
                     <span class="formacion-fecha">Abril 1990</span>
                 </div>
@@ -190,6 +217,40 @@
         window.addEventListener('scroll', morphHeader);
         window.addEventListener('resize', morphHeader);
         morphHeader();
+
+        // --- Improved smooth morph from hero to app bar ---
+        // Use existing heroHeader and compactHeader variables
+        let lastProgress = 0;
+        function morphHeroAppBar() {
+            const heroRect = heroHeader.getBoundingClientRect();
+            const heroHeight = heroRect.height;
+            // Start morph at 50% hero, end at 100% hero scrolled out
+            const startMorph = heroHeight * 0.5;
+            const endMorph = heroHeight * 0.98;
+            // How much of the hero is scrolled out from the top
+            const scrolled = Math.max(0, -heroRect.top);
+            let progress = 0;
+            if (scrolled > startMorph) {
+                progress = Math.min((scrolled - startMorph) / (endMorph - startMorph), 1);
+            }
+            // Use a cubic easing for a more natural transition
+            const eased = progress <= 0 ? 0 : progress >= 1 ? 1 : (1 - Math.pow(1 - progress, 3));
+            // Fade out hero
+            heroHeader.style.opacity = 1 - eased;
+            heroHeader.style.pointerEvents = eased >= 1 ? 'none' : 'auto';
+            heroHeader.style.transform = `translateY(${-32 * eased}px) scale(${1 - 0.02 * eased})`;
+            // Fade in app bar
+            compactHeader.style.opacity = eased;
+            compactHeader.style.pointerEvents = eased > 0.01 ? 'auto' : 'none';
+            compactHeader.style.transform = `translateY(${-24 * (1 - eased)}px) scale(${0.98 + 0.02 * eased})`;
+            // Accessibility
+            heroHeader.setAttribute('aria-hidden', eased >= 1 ? 'true' : 'false');
+            compactHeader.setAttribute('aria-hidden', eased < 0.01 ? 'true' : 'false');
+            lastProgress = eased;
+        }
+        window.addEventListener('scroll', morphHeroAppBar, { passive: true });
+        window.addEventListener('resize', morphHeroAppBar);
+        morphHeroAppBar();
 
         // Enhanced scroll interactivity: fade/slide and app bar parallax
         document.addEventListener('DOMContentLoaded', function () {
